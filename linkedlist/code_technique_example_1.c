@@ -27,8 +27,8 @@ int addnode(struct node **headRef, int data)
 	return 0;
 }
 
-//technique 1: iterate over the linklist
-int Length(struct node *head)
+//technique 1: iterate over the list using for loop
+int fLength(struct node *head)
 {
 	int count = 0;
 	struct node *iterator = NULL;
@@ -39,6 +39,21 @@ int Length(struct node *head)
 	return count;	//return 0 if list is empty
 }
 
+//technique 1: iterate over the list using while loop
+int wLength(struct node *head)
+{
+	int count = 0;
+	struct node *iterator = NULL;
+	
+	iterator = head;
+	while(iterator != NULL)
+	{
+		count++;
+		iterator = iterator->next;
+	}
+	return count;
+}
+
 int main(int argc, char **argv)
 {
 	struct node *head = NULL;
@@ -47,9 +62,13 @@ int main(int argc, char **argv)
 	addnode(&head, 3);
 	addnode(&head, 4);
 
-	int total = Length(head);
+	int ftotal = fLength(head);
 	
-	printf("%d\n", total);
+	printf("%d\n", ftotal);
+	
+	int wtotal = wLength(head);
 
+	printf("%d\n", wtotal);
+	
 	return 0;
 }

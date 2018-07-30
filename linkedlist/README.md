@@ -1,22 +1,22 @@
-Linklist Code Examples
+Linklist Code Examples <br/>
 
-linklist can store virtually anything.
+linklist can store virtually anything. <br/>
 
-define linklist:
+define linklist: <br/>
 
-struct node{
-	//data part // you can add more data definitions here
-	int data;
-	struct node *next;		//this is important for linking //later will discuss how doubly linklist works
-};
+struct node{ <br/>
+	//data part // you can add more data definitions here <br/>
+	int data; <br/>
+	struct node *next;		//this is important for linking //later will discuss how doubly linklist works <br/>
+}; <br/>
 
 
-linklist mechanics
+linklist mechanics <br/> <br/>
 
-1. allocate
-	struct node *newnode = malloc(sizeof(struct node));
-	newnode->data = data;
-2. link next
-	newnode->next = *headref;
-3. link head
-	*headref = newnode;
+1. allocate <br/>
+	struct node *newnode = malloc(sizeof(struct node)); <br/>
+	newnode->data = data; <br/>
+2. link next <br/>
+	newnode->next = *headref; <br/>
+3. link head <br/>
+	*headref = newnode; <br/>

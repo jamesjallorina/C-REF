@@ -68,9 +68,9 @@ struct node *appendnode(struct node **headref, int data)
 	}
 }
 
-struct node *copylist(struct node **headref)
+struct node *copylist(struct node *headref)
 {
-	struct node *current = *headref;
+	struct node *current = headref;
 	struct node *newlist = NULL;
 	struct node *tail = NULL;
 	
@@ -93,6 +93,45 @@ struct node *copylist(struct node **headref)
 		current = current->next;
 	}
 	return (newlist);
+}
+
+struct node *copylist_with_push(struct node *headref)
+{
+	struct node *current = headref;
+	struct node *newlist = NULL;
+	struct node *tail = NULL:;
+	
+	while(current != NULL)
+	{
+		if(newlist == NULL)
+		{
+			push(&newlist, current->data);
+			tail = newlist;
+		}
+		else
+		{
+			push(&(tail->next), current->data);
+			tail = tail->next;
+		}
+		current = current->next;
+	}
+	return (newlist);
+}
+
+struct node *copylist_with_dummy_node(struct node *headref)
+{
+	struct node *current = headref;
+	struct node dummy;
+	dummy.next = NULL;
+	struct node *tail = &dummy;
+
+	while(current != NULL)
+	{
+		push(&(tail->next), current->data);
+		tail = tail->next;
+		current = current->next;
+	}
+	return (dummy.next);
 }
 
 #endif

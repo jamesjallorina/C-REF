@@ -24,6 +24,7 @@ void push(struct node **headref, int data)
 	*headref = newnode;
 }
 
+//append node with push
 struct node *appendnode_with_push(struct node **headref, int data)
 {
 	struct node *current = *headref;
@@ -42,6 +43,7 @@ struct node *appendnode_with_push(struct node **headref, int data)
 	}
 }
 
+//append node wihout using push
 struct node *appendnode(struct node **headref, int data)
 {
 	struct node *current = *headref;
@@ -64,6 +66,33 @@ struct node *appendnode(struct node **headref, int data)
 		current->next = newnode;
 		return *headref;
 	}
+}
+
+struct node *copylist(struct node **headref)
+{
+	struct node *current = *headref;
+	struct node *newlist = NULL;
+	struct node *tail = NULL;
+	
+	while(current != NULL)
+	{
+		if(newlist == NULL)
+		{
+			newlist = malloc(sizeof(struct node));
+			newlist->data = current->data;
+			newlist->next = NULL;
+			tail = newlist;
+		}
+		else
+		{
+			tail->next = malloc(sizeof(struct node));
+			tail = tail->next;
+			tail->data = current->data;
+			tail->next = NULL;
+		}
+		current = current->next;
+	}
+	return (newlist);
 }
 
 #endif

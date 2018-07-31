@@ -134,6 +134,23 @@ struct node *copylist_with_dummy_node(struct node *headref)
 	return (dummy.next);
 }
 
+struct node *copylist_with_lastref(struct node *headref)
+{
+	struct node *current = headref;
+	struct node *newlist = NULL;
+	struct node **lastPtrRef  = NULL;
+	
+	lastPtrRef = &newlist;
+	
+	while(current != NULL)
+	{
+		push(lastPtrRef, current->data);
+		lastPtrRef = &(*(lastPtrRef)->next);
+		current = current->next;
+	}
+	return (newlist);
+}
+
 #endif
 
 

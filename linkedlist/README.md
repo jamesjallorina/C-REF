@@ -26,7 +26,7 @@ There are a many variations on the basic linked list which have individual advan
 over the basic linked list. It is probably best to have a firm grasp of the basic linked list <br/>
 and its code before worrying about the variations too much. <br/>
 
-• Dummy Header Forbid the case where the head pointer is NULL. <br/>
+• **Dummy Header Forbid the case where the head pointer is NULL. <br/>
 Instead, choose as a representation of the empty list a single "dummy" <br/>
 node whose .data field is unused. The advantage of this technique is that <br/>
 the pointer-to-pointer (reference parameter) case does not come up for <br/>

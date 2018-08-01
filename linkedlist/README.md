@@ -1,4 +1,4 @@
-#Linklist Code Examples <br/>
+**Linklist Code Examples** <br/>
 
 linklist can store virtually anything. <br/>
 
@@ -42,11 +42,9 @@ don't allow reference parameters, such as Java, may require the dummy <br/>
 header as a workaround. (See the "temporary dummy" variant below.) <br/>
 <br/>
 <br/>
-<br/>
 • **Circular Instead** of setting the .next field of the last node to NULL,<br/>
 set it to point back around to the first node. Instead of needing a fixed head<br/>
-end, any pointer into the list will do.<br/>
-<br/>
+end, any pointer into the list will do.<br<br/>
 <br/>
 <br/>
 • **Tail Pointer** The list is not represented by a single head pointer. Instead<br/>
@@ -56,7 +54,6 @@ at the end of the list such as adding an end element or appending two lists<br/>
 to work efficiently.<br/>
 <br/>
 <br/>
-<br/>
 • **Head struct** A variant I like better than the dummy header is to have a<br/>
 special "header" struct (a different type from the node type) which<br/>
 contains a head pointer, a tail pointer, and possibly a length to make many<br/>
@@ -64,7 +61,6 @@ operations more efficient. Many of the reference parameter problems go<br/>
 away since most functions can deal with pointers to the head struct<br/>
 (whether it is heap allocated or not). This is probably the best approach to<br/>
 use in a language without reference parameters, such as Java.<br/>
-<br/>
 <br/>
 <br/>
 • **Doubly-Linked** Instead of just a single .next field, each node<br/>
@@ -83,7 +79,6 @@ number of elements per node can provide different performance<br/>
 characteristics: many elements per node has performance more like an<br/>
 array, few elements per node has performance more like a linked list. The<br/>
 Chunk List is a good way to build a linked list with good performance.<br/>
-<br/>
 <br/>
 <br/>
 • **Dynamic Array** Instead of using a linked list, elements may be<br/>

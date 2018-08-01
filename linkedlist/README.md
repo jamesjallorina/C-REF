@@ -26,7 +26,7 @@ There are a many variations on the basic linked list which have individual advan
 over the basic linked list. It is probably best to have a firm grasp of the basic linked list <br/>
 and its code before worrying about the variations too much. <br/>
 
-• **Dummy Header Forbid the case where the head pointer is NULL. <br/>
+• **Dummy Header** Forbid the case where the head pointer is NULL. <br/>
 Instead, choose as a representation of the empty list a single "dummy" <br/>
 node whose .data field is unused. The advantage of this technique is that <br/>
 the pointer-to-pointer (reference parameter) case does not come up for <br/>
@@ -43,13 +43,13 @@ header as a workaround. (See the "temporary dummy" variant below.) <br/>
 <br/>
 <br/>
 <br/>
-• Circular Instead of setting the .next field of the last node to NULL,<br/>
+• **Circular Instead** of setting the .next field of the last node to NULL,<br/>
 set it to point back around to the first node. Instead of needing a fixed head<br/>
 end, any pointer into the list will do.<br/>
 <br/>
 <br/>
 <br/>
-• Tail Pointer The list is not represented by a single head pointer. Instead<br/>
+• **Tail Pointer** The list is not represented by a single head pointer. Instead<br/>
 the list is represented by a head pointer which points to the first node and a<br/>
 tail pointer which points to the last node. The tail pointer allows operations<br/>
 at the end of the list such as adding an end element or appending two lists<br/>
@@ -57,7 +57,7 @@ to work efficiently.<br/>
 <br/>
 <br/>
 <br/>
-• Head struct A variant I like better than the dummy header is to have a<br/>
+• **Head struct** A variant I like better than the dummy header is to have a<br/>
 special "header" struct (a different type from the node type) which<br/>
 contains a head pointer, a tail pointer, and possibly a length to make many<br/>
 operations more efficient. Many of the reference parameter problems go<br/>
@@ -67,7 +67,7 @@ use in a language without reference parameters, such as Java.<br/>
 <br/>
 <br/>
 <br/>
-• Doubly-Linked Instead of just a single .next field, each node<br/>
+• **Doubly-Linked** Instead of just a single .next field, each node<br/>
 incudes both .next and .previous pointers. Insertion and deletion now<br/>
 require more operations. but other operations are simplified. Given a<br/>
 pointer to a node, insertion and deletion can be performed directly whereas<br/>
@@ -77,7 +77,7 @@ followed downstream.<br/>
 <br/>
 <br/>
 <br/>
-• Chunk List Instead of storing a single client element in each node, store<br/>
+• **Chunk List** Instead of storing a single client element in each node, store<br/>
 a little constant size array of client elements in each node. Tuning the<br/>
 number of elements per node can provide different performance<br/>
 characteristics: many elements per node has performance more like an<br/>
@@ -86,7 +86,7 @@ Chunk List is a good way to build a linked list with good performance.<br/>
 <br/>
 <br/>
 <br/>
-• Dynamic Array Instead of using a linked list, elements may be<br/>
+• **Dynamic Array** Instead of using a linked list, elements may be<br/>
 stored in an array block allocated in the heap. It is possible to grow and<br/>
 shrink the size of the block as needed with calls to the system function<br/>
 realloc(). Managing a heap block in this way is a fairly complex, but can<br/>
